@@ -50,7 +50,7 @@ def auth_info_view(request):
     try:
         return storage.retrieve(token)
     except KeyError:
-        log.info('auth_info requested invalid token "%s"')
+        log.info('auth_info requested invalid token "%s"' % token)
         request.response.status = 400
         return None
 
